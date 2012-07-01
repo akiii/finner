@@ -73,4 +73,5 @@ Finner::Application.routes.draw do
   match 'profile/me/update_password' => 'profile#update_password'
   match 'contacts/send_with_to_user_id/:to_user_id' => 'contacts#send_with_to_user_id', :as => :contacts_send
   match 'projects/create' => 'projects#create'
+  match 'projects/:id/update' => 'projects#update'
 end
