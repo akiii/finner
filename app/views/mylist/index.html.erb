@@ -1,8 +1,4 @@
 <% content_for :cols do %>
-  <%= render 'shared/navbar' %><br />
-<% end %>
-
-<% content_for :cols do %>
   <h3>=== Friends ===</h3>
   <% @friends.each  do |friend| %>
     <%= render 'profile/user', :user => friend, :current_user => @current_user %>
