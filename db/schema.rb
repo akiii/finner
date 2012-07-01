@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120701022726) do
+ActiveRecord::Schema.define(:version => 20120701073013) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "to_user_id"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20120701022726) do
   create_table "participants", :force => true do |t|
     t.integer  "project_id"
     t.integer  "user_id"
-    t.boolean  "isAllowed"
     t.boolean  "authority"
+    t.boolean  "is_allowed"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

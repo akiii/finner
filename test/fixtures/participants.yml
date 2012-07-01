@@ -3,11 +3,11 @@
 one:
   project_id: 1
   user_id: 1
-  isAllowed: false
-  authrity: false
+  authority: false
+  is_allowed: false
 
 two:
   project_id: 1
   user_id: 1
-  isAllowed: false
-  authrity: false
+  authority: false
+  is_allowed: false
