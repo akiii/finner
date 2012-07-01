@@ -46,13 +46,18 @@ class User < ActiveRecord::Base
   def projects
     projects = []
     Participant.find_all_by_user_id(self.id).each do |p|
-      projects << project
+      projects << p.project
     end
     return projects
   end
 
   def can_edit(project)
-    return Participant.find_by_project_id_and_user_id(project.id, self.id).authority
+    p = Participant.find_by_project_id_and_user_id(project.id, self.id)
+    if p
+      return p.authority
+    else
+      return false
+    end
   end
 
 end
