@@ -1,0 +1,5 @@
+<h1>Profile edit base</h1>
+<%= form_for @user, :url => { :action => 'update_base' }, :html => { :multipart => true } do |form| %>
+  <%= render 'signup/form', :form => form, :password => false %>
+  <%= form.submit 'update' %>
+<% end %>

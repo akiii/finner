@@ -1,0 +1,9 @@
+<h1>Login</h1>
+
+<%= form_for @user, :url => { :action => 'submit' } do |form| %>
+  <%= render 'login/form', :form => form %>
+  <%= form.submit 'login' %>
+<% end %>
+
+<br />
+<%= link_to 'Signup', signup_index_path %>

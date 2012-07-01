@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Finner</title>
+  <%= stylesheet_link_tag    "mylist", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="navbar">
+    <%= yield :navbar %>
+  </div>
+  <div id="cols">
+    <%= yield :cols %>
+  </div>
+  <div id="footer">
+  </div>
+  <%= yield %>
+</body>
+</html>

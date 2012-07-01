@@ -1,0 +1,32 @@
+<%= 'icon : ' %><%= image_tag user.icon.url(:thumb) %><br />
+<%= 'account name : ' %><%= user.account %><br />
+<%= 'university : ' %><%= user.university.name %><br />
+<%= 'department : ' %><%= user.department.name %><br />
+<%= 'profile : ' %><%= user.profile %><br />
+<% if user == current_user %>
+  <%= link_to "編集", :controller => "profile", :action => "edit_base" %><br />
+  <%= link_to "passwordを変更", :controller => "profile", :action => "edit_password" %><br />
+<% else %>
+  <% if current_user.is_send_contact(user) %>
+    <% unless current_user.is_received_contact(user) %>
+      <%= "コンタクト申請済み" %><br />
+    <% end %>
+  <% else %>
+    <p id="contact_link_area_<%= user.id %>">
+    <% if current_user.is_received_contact(user) %>
+      <%= link_to "コンタクト承認", contacts_send_path(user.id), :confirm => "コンタクトを承認しますか？", :remote => true, :id => "clicked_contact_#{user.id}" %><br />
+    <% else %>
+      <%= link_to "コンタクト", contacts_send_path(user.id), :confirm => "コンタクトを送りますか？", :remote => true, :id => "clicked_contact_#{user.id}" %><br />
+    <% end %>
+    </p>
+    
+    <script type="text/javascript">
+      $(function(){
+        $("#clicked_contact_<%= user.id %>").click(function() {
+          $("#contact_link_area_<%= user.id %>").html('コンタクト申請済み');
+        });
+      });
+    </script>
+
+  <% end %>
+<% end %>

@@ -1,0 +1,10 @@
+<%= 'account : ' %><%= form.text_field :account, :size => '30' %><br />
+<% if password == true %>
+  <%= 'password : ' %><%= form.password_field :password, :size => '30' %><br />
+  <%= 'password confirm : ' %><%= password_field_tag :password_confirm, '', :size => '30' %><br />
+<% end %>
+<%= 'email : ' %><%= form.text_field :email, :size => '30' %><br />
+<%= 'department : ' %><%= grouped_collection_select :user, :university_department_relationship_id, @universities, :departments, :name, :id, :name, :selected => @user.university_department_relationship_id %>
+<br />
+<%= 'profile : ' %><%= form.text_area :profile, :rows => 10, :cols => 50 %><br />
+<%= 'icon : ' %><%= image_tag @user.icon.url(:thumb) %><%= form.file_field :icon %><br />

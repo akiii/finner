@@ -1,0 +1,14 @@
+<% content_for :navbar do %>
+  <%= render 'shared/navbar' %><br />
+<% end %>
+<% content_for :me do %>
+  <h3>=== Me ===</h3>
+  <%= render 'profile/user', :user => @current_user, :current_user => @current_user %>
+<% end %>
+<% content_for :users do %>
+  <h3>=== Users ===</h3>
+  <% @reccomend_users.each  do |user| %>
+    <%= render 'profile/user', :user => user, :current_user => @current_user %>
+    <%= "--------------------------------------" %><br />
+  <% end %>
+<% end %>
