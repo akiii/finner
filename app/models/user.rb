@@ -51,4 +51,8 @@ class User < ActiveRecord::Base
     return projects
   end
 
+  def can_edit(project)
+    return Participant.find_by_project_id_and_user_id(project.id, self.id).authority
+  end
+
 end
