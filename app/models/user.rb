@@ -43,4 +43,12 @@ class User < ActiveRecord::Base
     end
   end
 
+  def projects
+    projects = []
+    Participant.find_all_by_user_id(self.id).each do |p|
+      projects << project
+    end
+    return projects
+  end
+
 end
