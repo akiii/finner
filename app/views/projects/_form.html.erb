@@ -2,3 +2,6 @@
 <%= 'Description : ' %><%= form.text_area :description, :rows => 10, :cols => 50 %><br />
 <%= 'open : ' %><%= select_tag 'open', options_for_select( ['open', 'private'] ) %><br />
 <%= 'icon : ' %><%= image_tag @project.icon.url(:thumb) %><%= form.file_field :icon %><br />
+<% if edit %>
+  <%= 'release : ' %><%= select_tag 'release', options_for_select( ['not release', 'release'] ) %><br />
+<% end %>

@@ -7,6 +7,13 @@
   <%= "Private" %>
 <% end %>
 <br />
+<%= "Release : " %>
+<% if project.released %>
+  <%= "released" %>
+<% else %>
+  <%= "not release" %>
+<% end %>
+<br />
 <%= "Icon : " %><%= image_tag project.icon.url(:thumb) %><br />
 <%= "Users : " %>
 <% project.users.each  do |user| %>
