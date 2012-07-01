@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
   def edit
     @project = Project.find(params[:id])
     if current_user.can_edit(@project)
-#      @notAllowedUsers = 
+
     else
       redirect_to projects_path
     end
