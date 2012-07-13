@@ -7,7 +7,7 @@
   <% @project.users.each do |u| %>
     <%= image_tag u.icon.url(:thumb) %>
     <% unless u.can_edit(@project) %>
-      <%= link_to '権限を与える', :action => "edit", :id => @project.id %>
+      <%= link_to '権限を与える', :action => "give_approve_to_user", :id => @project.id, :user_id => u.id %>
     <% end %>
   <% end %>
   <br />
