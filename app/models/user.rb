@@ -60,4 +60,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def skills
+    return UserSkillRelationship.find_all_by_user_id(self.id)
+  end
+
 end
