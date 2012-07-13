@@ -21,105 +21,129 @@ table th tr{
 body{
         margin-top: 0px;
 }
+#wrapper{
+        background-image: url("common/background.png");
+        background-repeat: repeat-y;
+        width: 970px;
+        height: auto;
+        margin: 0 auto;
+}
 #navbar{
-//        background-repeat: no-repeat;
-//        width: 920px;
-//        height: 40px;
-//        margin-left: -31px;
+        width: 960px;
+        height: 40px;
+        margin-top: -16px;
+        margin-left: -35px;
+        position: fixed;
 }
 #navbar ul{
-	color: #ffffff;
-//        width: 900px;
-//        height: 40px;
-        list-style: none;
+        width: 960px;
+        height: 40px;
 }
 #navbar li{
-        width: 180px;
+        width: 160px;
         height: 40px;
-        float: left;
-        padding-left: -30px
+	float: left;
+	list-style: none;
 }
-/*
 .home a{
         display: block;
         width: 100%;
         height: 100%;
-        background-image: url("common/navigation_bar.png");
-        background-position: 0px -80px;
+        background-image: url("common/navbar.png");
+        background-position: 0px 0px;
         background-repeat: no-repeat;
         text-indent: -1000em;
         text-decoration: none;
 }
 .home a:hover{
-        background-image:url("common/navigation_bar.png");
-        background-position: 0px -40px;
-}
-.profile a{
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-image: url("common/navigation_bar.png");
-        background-position: -180px 0px;
-        background-repeat: no-repeat;
-        text-indent: -1000em;
-        text-decoration: none;
-}
-.profile a:hover{
-        background-image:url("common/navigation_bar.png");
-        background-position: -180px -40px;
+        background-image:url("common/navbar.png");
+        background-position: 0px -80px;
 }
 .search a{
         display: block;
         width: 100%;
         height: 100%;
-        background-image: url("common/navigation_bar.png");
-        background-position: -360px 0px;
+        background-image: url("common/navbar.png");
+        background-position: -160px 0px;
         background-repeat: no-repeat;
         text-indent: -1000em;
         text-decoration: none;
 }
 .search a:hover{
-        background-image:url("common/navigation_bar.png");
-        background-position: -360px -40px;
+        background-image:url("common/navbar.png");
+        background-position: -160px -80px;
 }
-.works a{
+.mylist a{
         display: block;
         width: 100%;
         height: 100%;
-        background-image: url("common/navigation_bar.png");
-        background-position: -540px 0px;
+        background-image: url("common/navbar.png");
+        background-position: -320px -40px;
         background-repeat: no-repeat;
         text-indent: -1000em;
         text-decoration: none;
 }
-.works a:hover{
-        background-image:url("common/navigation_bar.png");
-        background-position: -540px -40px;
+.mylist a:hover{
+        background-image:url("common/navbar.png");
+        background-position: -320px -80px;
+}
+.projects a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url("common/navbar.png");
+        background-position: -480px 0px;
+        background-repeat: no-repeat;
+        text-indent: -1000em;
+        text-decoration: none;
+}
+.projects a:hover{
+        background-image:url("common/navbar.png");
+        background-position: -480px -80px;
+}
+.message a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url("common/navbar.png");
+        background-position: -640px 0px;
+        background-repeat: no-repeat;
+        text-indent: -1000em;
+        text-decoration: none;
+}
+.message a:hover{
+        background-image:url("common/navbar.png");
+        background-position: -640px -80px;
 }
 .logout a{
         display: block;
         width: 100%;
         height: 100%;
-        background-image: url("common/navigation_bar.png");
-        background-position: -720px 0px;
+        background-image: url("common/navbar.png");
+        background-position: -800px 0px;
         background-repeat: no-repeat;
         text-indent: -1000em;
         text-decoration: none;
 }
 .logout a:hover{
-        background-image:url("common/navigation_bar.png");
-        background-position: -720px -40px;
+        background-image:url("common/navbar.png");
+        background-position: -800px -80px;
 }
-*/
+#content .cols{
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 40px;
+//	background-color: #00ff00;
+}
 #footer{
-        color: #ffffff;
-//        background-image: url("common/footer.png");
-        width: 902px;
-        margin-top: 20px;
-        margin-left: 8px;
-        height: 54px;
+        background-image: url("common/footer.png");
+        width: 960px;
+        height: 40px;
+        margin-left: 5px;
         clear: left;
 }
 #footer .copyright{
-        padding-top: 15px;
+        color :#ffffff;
+        text-align: center;
+        padding-top: 10px;
 }
