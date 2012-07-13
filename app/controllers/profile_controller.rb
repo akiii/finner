@@ -16,6 +16,20 @@ class ProfileController < ApplicationController
     @user = current_user
     @universities = University.all
     @udrs = UniversityDepartmentRelationship.all
+
+    @skills = @user.skills
+    @remail_skills = []
+    Skill.all.each do |s|
+      unless @skills.index(s)
+        @remail_skills << s
+      end
+    end
+
+    skills_arr = []
+    @remail_skills.each do |s|
+      skills_arr << s.name
+    end
+    @grouped_options = {@remail_skills[0].skill_category.name => skills_arr}
   end
 
   def update_base
