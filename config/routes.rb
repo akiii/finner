@@ -76,4 +76,5 @@ Finner::Application.routes.draw do
   match 'projects/:id/update' => 'projects#update'
   match 'projects/:id/send_participate_request' => 'projects#send_participate_request'
   match 'projects/:id/approve_request/:user_id' => 'projects#approve_request'
+  match 'projects/:id/give_approve_to_user/:user_id' => 'projects#give_approve_to_user'
 end
