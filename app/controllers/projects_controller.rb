@@ -2,9 +2,19 @@
 class ProjectsController < ApplicationController
   before_filter :session_exist
 
+  layout "project"
+
   def index
     @user = current_user
     @projects = @user.projects
+    @user.friends.each do |f|
+      f.projects.each do |p|
+        unless @projects.index(p)
+          @projects << p
+	end
+      end
+    end
+    @projects.flatten!
   end
 
   def new
@@ -54,6 +64,18 @@ class ProjectsController < ApplicationController
     else
       redirect_to projects_path
     end
+  end
+
+  def send_participate_request
+    Participant.create(:project_id => params[:id], :user_id => current_user.id, :authority => false, :is_allowed => false)
+    redirect_to projects_path
+  end
+
+  def approve_request
+    p = Participant.find_by_project_id_and_user_id(params[:id], params[:user_id])
+    p.is_allowed = true
+    p.save
+    redirect_to projects_path
   end
 
 end
