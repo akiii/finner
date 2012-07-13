@@ -78,4 +78,11 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
 
+  def give_approve_to_user
+    p = Participant.find_by_project_id_and_user_id(params[:id], params[:user_id])
+    p.authority = true
+    p.save
+    redirect_to edit_project_path, :id => params[:id]
+  end
+
 end
