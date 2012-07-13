@@ -1,5 +1,6 @@
 <h1>Profile edit base</h1>
 <%= form_for @user, :url => { :action => 'update_base' }, :html => { :multipart => true } do |form| %>
   <%= render 'signup/form', :form => form, :password => false %>
+  <%= select_tag 'skill[name]', grouped_options_for_select(@grouped_options), :include_blank => true %><br />
   <%= form.submit 'update' %>
 <% end %>
