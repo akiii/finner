@@ -74,4 +74,6 @@ Finner::Application.routes.draw do
   match 'contacts/send_with_to_user_id/:to_user_id' => 'contacts#send_with_to_user_id', :as => :contacts_send
   match 'projects/create' => 'projects#create'
   match 'projects/:id/update' => 'projects#update'
+  match 'projects/:id/send_participate_request' => 'projects#send_participate_request'
+  match 'projects/:id/approve_request/:user_id' => 'projects#approve_request'
 end
