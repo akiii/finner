@@ -1,5 +1,7 @@
 <h1>Project#edit</h1>
-<%= form_for @project, :url => { :action => "update" }, :html => { :multipart => true } do |form| %>
-  <%= render 'form', :form => form, :edit => true %>
-  <%= form.submit "update" %>
+<% content_for :cols do %>
+  <%= form_for @project, :url => { :action => "update" }, :html => { :multipart => true } do |form| %>
+    <%= render 'form', :form => form, :edit => true %>
+    <%= form.submit "update" %>
+  <% end %>
 <% end %>

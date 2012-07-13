@@ -7,14 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="navbar">
-    <%= render 'shared/navbar' %><br /><br />
+  <div id="wrapper">
+    <div id="navbar">
+      <%= render 'shared/navbar' %><br /><br />
+    </div>
+    <div id="content">
+      <div class="cols">
+        <%= yield :cols %>
+      </div>
+    </div>
+    <div id="footer">
+      <%= render 'shared/footer' %>
+    </div>
   </div>
-  <div id="cols">
-    <%= yield :cols %>
-  </div>
-  <div id="footer">
-  </div>
-  <%= yield %>
 </body>
 </html>

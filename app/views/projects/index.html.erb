@@ -1,5 +1,7 @@
-<h1>Projects</h1>
-<%= link_to 'New', new_project_path %><br />
-<% @projects.each do |project| %>
-  <%= render 'project', :project => project, :current_user => @user %>
+<% content_for :cols do %>
+  <%= link_to 'New', new_project_path %><br />
+  <% @projects.each do |project| %>
+    <%= render 'project', :project => project, :current_user => @user %>
+    <%= "===============================" %><br />
+  <% end %>
 <% end %>

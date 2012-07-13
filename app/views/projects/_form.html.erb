@@ -4,4 +4,11 @@
 <%= 'icon : ' %><%= image_tag @project.icon.url(:thumb) %><%= form.file_field :icon %><br />
 <% if edit %>
   <%= 'release : ' %><%= select_tag 'release', options_for_select( ['not release', 'release'] ) %><br />
+  <% @project.users.each do |u| %>
+    <%= image_tag u.icon.url(:thumb) %>
+    <% unless u.can_edit(@project) %>
+      <%= link_to '権限を与える', :action => "edit", :id => @project.id %>
+    <% end %>
+  <% end %>
+  <br />
 <% end %>

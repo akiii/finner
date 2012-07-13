@@ -2,26 +2,22 @@
 <html>
 <head>
   <title>Finner</title>
-  <%= stylesheet_link_tag    "home", :media => "all" %>
+  <%= stylesheet_link_tag "projects", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id=wrapper>
+  <div id="wrapper">
     <div id="navbar">
       <%= render 'shared/navbar' %><br /><br />
     </div>
     <div id="content">
-      <%= yield :content %>
-      <div class="me">
-        <%= yield :me %>
-      </div>
-      <div class="users">
-        <%= yield :users %>
+      <div class="cols">
+        <%= yield :cols %>
       </div>
     </div>
     <div id="footer">
-      <%= render 'shared/footer' %><br />
+      <%= render 'shared/footer' %>
     </div>
   </div>
 </body>

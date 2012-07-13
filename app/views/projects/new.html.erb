@@ -1,5 +1,7 @@
 <h1>Project#new</h1>
-<%= form_for @project, :url => { :action => "create" }, :html => { :multipart => true } do |form| %>
-  <%= render 'form', :form => form, :edit => false %>
-  <%= form.submit 'submit' %>
+<% content_for :cols do %>
+  <%= form_for @project, :url => { :action => "create" }, :html => { :multipart => true } do |form| %>
+    <%= render 'form', :form => form, :edit => false %>
+    <%= form.submit 'submit' %>
+  <% end %>
 <% end %>

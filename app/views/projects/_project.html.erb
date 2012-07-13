@@ -21,5 +21,19 @@
 <% end %>
 <br />
 <% if current_user.can_edit(project) %>
+  <%= "Request : " %>
+  <% project.requesters.each do |u| %>
+    <%= image_tag u.icon.url(:thumb) %>
+    <%= link_to "承認", :action => "approve_request", :id => project.id, :user_id => u.id %>
+  <% end %>
+  <br />
   <%= link_to 'Edit', :action => "edit", :id => project.id %><br />
 <% end %>
+<% if project.is_participate(current_user) %>
+  <%= "参加済み" %>
+<% elsif project.recieved_request(current_user) %>
+  <%= "リクエスト送信済み" %>
+<% else %>
+  <%= link_to '参加申請を送る', :action => "send_participate_request", :id => project.id %><br />
+<% end %>
+<br />
