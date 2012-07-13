@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
 
   def projects
     projects = []
-    Participant.find_all_by_user_id(self.id).each do |p|
+    Participant.find_all_by_user_id_and_is_allowed(self.id, true).each do |p|
       projects << p.project
     end
     return projects

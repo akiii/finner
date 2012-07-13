@@ -4,10 +4,34 @@ class Project < ActiveRecord::Base
 
   def users
     users = []
-    Participant.find_all_by_project_id(self.id).each do |p|
+    Participant.find_all_by_project_id_and_is_allowed(self.id, true).each do |p|
       users << p.user
     end
     return users
+  end
+
+  def requesters
+    users = []
+    Participant.find_all_by_project_id_and_is_allowed(self.id, false).each do |p|
+      users << p.user
+    end
+    return users
+  end
+
+  def is_participate(user)
+    if Participant.find_by_project_id_and_user_id_and_is_allowed(self.id, user.id, true)
+      return true
+    else
+      return false
+    end
+  end
+
+  def recieved_request(user)
+    if Participant.find_by_project_id_and_user_id(self.id, user.id)
+      return true
+    else
+      return false
+    end
   end
 
 end
