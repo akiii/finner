@@ -36,3 +36,13 @@ university_department_relationships.each do |r|
     UniversityDepartmentRelationship.create(:university_id => u.id, :department_id => d.id)
   end
 end
+
+SkillCategory.create(:name => "プログラミング");
+SkillCategory.create(:name => "デザイン");
+SkillCategory.create(:name => "マネジメント");
+
+languages = ["C", "C++", "C#", "Java", "Objective-C", "PHP", "Python", "Perl", "Ruby", "JavaScript", "SQL"]
+sk_p = SkillCategory.find_by_name("プログラミング")
+languages.each do |l|
+  Skill.create(:name => l, :skill_category_id => sk_p.id)
+end

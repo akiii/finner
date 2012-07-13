@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120701073013) do
+ActiveRecord::Schema.define(:version => 20120713154404) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "to_user_id"
@@ -46,6 +46,19 @@ ActiveRecord::Schema.define(:version => 20120701073013) do
     t.integer  "icon_file_size"
     t.string   "icon_content_type"
     t.datetime "icon_updated_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "skill_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "skills", :force => true do |t|
+    t.string   "name"
+    t.integer  "skill_category_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
