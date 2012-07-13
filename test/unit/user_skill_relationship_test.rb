@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserSkillRelationTest < ActiveSupport::TestCase
+class UserSkillRelationshipTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
